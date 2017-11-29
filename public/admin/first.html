@@ -37,8 +37,8 @@
 						<span class="glyphicon glyphicon-menu-hamburger"></span>
 						<span>分类管理</span>
 					</a>
-					<div class="child">
-						<a href="first.html">一级菜单</a>
+					<div class="child" style="display: block;">
+						<a class="now" href="first.html">一级菜单</a>
 						<a href="second.html">二级菜单</a>
 					</div>					
 				</li>
@@ -57,7 +57,7 @@
 			<a href="javascript:;" class="pull-left">
 				<span class="icon-menu glyphicon glyphicon-menu-hamburger"></span>
 			</a>
-			<a href="javascript:;" class="pull-right icon-logout" >
+			<a href="javascript:;" class="pull-right icon-logout" data-toggle="modal" data-target="#logoutModal">
 				<span class="glyphicon glyphicon-log-out" data-toggle="modal" data-target="#logoutModal"></span>
 			</a>
 		</div>
@@ -66,15 +66,10 @@
 			<!-- 顶部的面包线（路径导航） -->
 			<ol class="breadcrumb">
 			  <li ><a href="#">系统管理</a></li>
-			  <li class="active">首页</li>
+			  <li ><a href="#">分类管理</a></li>
+			  <li class="active">一级分类</li>
 			</ol>
-			<!-- 底部的俩个echarts图表 -->
-			<div class="echarts">
-				<div class="echarts-left w45 pull-left" id="echarts-bar">
-					
-				</div>
-				<div class="echarts-right w45 pull-right" id="echarts-pie"></div>
-			</div>
+
 		</div>
 	</div>
 	
@@ -100,7 +95,6 @@
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
 	<!-- bootstrap框架 核心JS -->
 	<script src="lib/jquery/jquery.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.js"></script>
@@ -109,6 +103,5 @@
 	<!-- 关于echarts -->
 	<script src="lib/echarts/echarts.common.min.js"></script>
 	<script src="js/common.js"></script>
-	<script src="js/index.js"></script>
 </body>
 </html>

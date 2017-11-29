@@ -20,4 +20,34 @@ $(document).ajaxStop(function () {
 	}, 500);
 })
 
+// 菜单缩放--二级菜单显示与隐藏
+// 给子菜单取复用形类名，注册事件时很优雅
+$(".child").prev().on('click', function () {
+	// 注册的时候prev()了，函数内就要next()
+	$(this).next().slideToggle();//slideDown与slideUp
+})
+
+// 侧边栏显示与隐藏效果
+$(".icon-menu").on('click', function () {
+	// 使用show()和hide动画改变的是透明度
+	// aside侧边栏的动画和main主体的动画不一致
+	$(".lt-aside").toggleClass("now");
+	$(".lt-main").toggleClass("now");
+})
+
+// 退出按钮
+$(".btn-logout").on('click', function () {
+	$.ajax({
+		type: 'get',
+		url: '/employee/employeeLogout',
+		success: function (data) {
+			// 退出成功，才跳转到登录页面
+			if (data.success) {
+				location.href = "login.html";
+			}
+		}
+	})
+})
+
+
 })
