@@ -1,0 +1,15 @@
+@charset "UTF-8"
+
+body {
+	width: 100%;
+	height: 100%;
+}
+.bg-body {
+	background: #222D32;
+}
+.mt-150 {
+	margin-top: 150px;
+}
+.panel h4 {
+	text-align: center;
+}
