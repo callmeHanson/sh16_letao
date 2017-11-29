@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>乐淘--index页面--29下午</title>
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+
+	<!-- 关于进度条 的css引包 -->
+	<link rel="stylesheet" href="lib/nprogress/nprogress.css">
+	<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-	<div>Hello World</div>
+	<!-- 乐淘左侧的侧边栏 -->
+	<div class="lt-aside">
+		<div class="brand">
+			<a href="index.html">黑马16期</a>
+		</div>
+		<div class="user">
+			<img src="images/default.jpg" alt="这是聪聪的过去">
+			<p>超级管理员</p>
+		</div>
+		<div class="nav">
+			<ul>
+				<li>
+					<a class="now" href="user.html">
+						<span class="glyphicon glyphicon-user"></span>
+						<span>用户管理</span>
+					</a>
+ 				</li>
+				<li>
+					<a href="javascript:;">
+						<span class="glyphicon glyphicon-menu-hamburger"></span>
+						<span>分类管理</span>
+					</a>
+				</li>
+				<li>
+					<a href="product.html">
+						<span class="glyphicon glyphicon-tags"></span>
+						<span>商品管理</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 乐淘右侧的主体栏 -->
+	<div class="lt-main"></div>
+	<!-- bootstrap框架 核心JS -->
+	<script src="lib/jquery/jquery.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<!-- 关于进度条的 js -->
+	<script src="lib/nprogress/nprogress.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/index.js"></script>
 </body>
 </html>

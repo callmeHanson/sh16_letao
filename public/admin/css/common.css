@@ -1,8 +1,20 @@
 @charset "UTF-8"
 
+
+html,
 body {
-	width: 100%;
 	height: 100%;
+}
+* {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
 }
 .bg-body {
 	background: #222D32;
@@ -12,4 +24,57 @@ body {
 }
 .panel h4 {
 	text-align: center;
+}
+/* 乐淘左侧aside区域 */
+.lt-aside {
+	width: 180px;
+	height: 100%;
+	background: #222d32;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.lt-aside > .brand > a {
+	display: block;
+	width: 180px;
+	height: 50px;
+	background: #367fa9;
+	text-align: center;
+	line-height: 50px;
+	font-size: 24px;
+	color: #fff;
+}
+.lt-aside > .user {
+	width: 180px;
+	height: 150px;
+	margin-top: 50px;
+	
+}
+.lt-aside > .user > img {
+	display: block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+.lt-aside > .user > p {
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	// margin-top: 10px;
+	line-height: 40px;
+}
+
+.lt-aside .nav a {
+	display: block;
+	padding: 0 30px;
+	height: 40px;
+	line-height: 40px;
+	color: #ccc;
+	box-sizing: border-box;
+	border: 3px solid transparent;
+}
+.lt-aside .nav a.now {
+	border-left: 3px solid #069;
+	background: #1d1f21;
 }
