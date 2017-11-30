@@ -98,8 +98,7 @@
 			
 		</div>
 	</div>
-	
-	
+
 
 	<!-- 右侧主体的模态框 -->
 	<div class="modal fade" tabindex="-1" role="dialog" id="logoutModal">
@@ -151,7 +150,7 @@
 	<script type="text/html" id="tpl_users">
 		{{each rows v i}}
 		<tr>
-			<td>{{(page-1)*size+(i+1)}}</td>
+			<td>{{(i+1)}}</td>
 			<td>{{v.username}}</td>
 			<td>{{v.mobile}}</td>
 			<td>{{v.isDelete === 0 ? '禁用' : '正常'}}</td>

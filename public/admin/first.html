@@ -70,6 +70,29 @@
 			  <li class="active">一级分类</li>
 			</ol>
 
+			<!-- first页面 添加分类 -->
+			<button class="btn btn-default mb_20">添加分类</button>
+
+			<!-- first页面 一级分类的表格 -->
+			<table class="table table-bordered table-hover ">
+				<thead>
+					<tr>
+						<th width="20%">序号</th>
+						<th width="80%">分类名称</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+
+				</tbody>
+
+			</table>
+
+			<!-- 分页模块 -->
+			<ul id="paginator">
+				
+			</ul>
 		</div>
 	</div>
 	
@@ -95,6 +118,18 @@
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+
+	<!-- first页面下的一级菜单列表 -->
+	<script type="text/html" id="tpl_first">
+		{{each rows v i}}
+		<tr>
+			<td>{{(page-1)*size+i+1}}</td>
+			<td>{{v.categoryName}}</td>
+		</tr>
+		{{/each}}
+	</script>
+	
+
 	<!-- bootstrap框架 核心JS -->
 	<script src="lib/jquery/jquery.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.js"></script>
@@ -102,6 +137,12 @@
 	<script src="lib/nprogress/nprogress.js"></script>
 	<!-- 关于echarts -->
 	<script src="lib/echarts/echarts.common.min.js"></script>
+	<!-- 关于模板引擎 -->
+	<script src="lib/artTemplate/template-web.js"></script>
+	<!-- 关于分页 -->
+	<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+	<!-- 开发者自己的js -->
 	<script src="js/common.js"></script>
+	<script src="js/first.js"></script>
 </body>
 </html>
