@@ -68,7 +68,33 @@
 			  <li ><a href="#">系统管理</a></li>
 			  <li class="active">用户管理</li>
 			</ol>
+
+
+			<!-- 用户列表加载 -->
+			<table class="table table-bordered">
+
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>用户名</th>
+						<th>手机号</th>
+						<th>状态</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<!-- 使用模板引擎渲染后台数据 -->
+				<tbody>
+				
+				</tbody>
+				
+			</table>
+
 		</div>
+	</div>
+	
+	<!-- 分页区域 -->
+	<div id="paginator">
+		
 	</div>
 	
 	<!-- 右侧主体的模态框 -->
@@ -89,10 +115,30 @@
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 	        <button type="button" class="btn btn-primary btn-logout">退出</button>
-	      </div>
-	    </div><!-- /.modal-content -->
+      </div>
+    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+
+	<!-- 模板引擎区域 -->
+	<script type="text/html" id="tpl_users">
+		{{each rows v i}}
+		<tr>
+			<td>{{v.id}}</td>
+			<td>{{v.username}}</td>
+			<td>{{v.mobile}}</td>
+			<td>{{v.isDelete === 0 ? '禁用' : '正常'}}</td>
+			<td>
+				{{if v.isDelete === 0}}
+				<button class="btn btn-danger">禁用</button>
+				{{else if v.isDelete === 1}}
+				<button class="btn btn-success">启用</button>
+				{{/if}}
+			</td>
+		</tr>
+		{{/each}}
+	</script>
+
 	<!-- bootstrap框架 核心JS -->
 	<script src="lib/jquery/jquery.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.js"></script>
@@ -100,6 +146,12 @@
 	<script src="lib/nprogress/nprogress.js"></script>
 	<!-- 关于echarts -->
 	<script src="lib/echarts/echarts.common.min.js"></script>
+	<!-- 关于模板引擎的引包 -->
+	<script src="lib/artTemplate/template-web.js"></script>
+	<!-- 关于分页的插件（一个单独的JS） -->
+	<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+	<!-- 开发者写的js（需要增加入口函数） -->
 	<script src="js/common.js"></script>
+	<script src="js/user.js"></script>
 </body>
 </html>

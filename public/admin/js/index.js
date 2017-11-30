@@ -4,7 +4,9 @@ $(function () {
 
 // 基于准备好的dom，初始化echarts实例
 var chartBar = echarts.init(document.getElementById('echarts-bar'));
+function fn () {
 
+}
 // 指定图表的配置项和数据
 var option = {
     title: {
