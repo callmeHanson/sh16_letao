@@ -151,7 +151,7 @@
 	<script type="text/html" id="tpl_users">
 		{{each rows v i}}
 		<tr>
-			<td>{{v.id}}</td>
+			<td>{{(page-1)*size+(i+1)}}</td>
 			<td>{{v.username}}</td>
 			<td>{{v.mobile}}</td>
 			<td>{{v.isDelete === 0 ? '禁用' : '正常'}}</td>
