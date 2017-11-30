@@ -57,7 +57,7 @@ $(function () {
     //获取isDelete
     var isDelete = $(this).hasClass("btn-danger") ? 0 : 1;
     //console.log(id);
-    //console.log(isDelete);
+    console.log(isDelete);
 
 
 

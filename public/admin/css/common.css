@@ -125,3 +125,8 @@ a:link, a:visited, a:hover, a:active {
 .lt-main .echarts .echarts-right {
 	height: 500px;
 }
+
+/* ====================	用户users区域 ===================== */
+// #paginator {
+// 	float: right;
+// }
