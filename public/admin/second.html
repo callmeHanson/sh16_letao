@@ -7,6 +7,7 @@
 
 	<title>乐淘--index页面--29下午</title>
 	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
 
 	<!-- 关于进度条 的css引包 -->
 	<link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -58,7 +59,7 @@
 				<span class="icon-menu glyphicon glyphicon-menu-hamburger"></span>
 			</a>
 			<a href="javascript:;" class="pull-right icon-logout"">
-				<span class="glyphicon glyphicon-log-out" data-toggle="modal" data-target="#logoutModal></span>
+				<span class="glyphicon glyphicon-log-out" data-toggle="modal" data-target="#logoutModal"></span>
 			</a>
 		</div>
 		<!-- fluid铺满当前浏览器窗口，而不是固定大小 -->
@@ -69,10 +70,37 @@
 			  <li ><a href="#">分类管理</a></li>
 			  <li class="active">二级分类</li>
 			</ol>
+			
+			<!-- 添加分类 -->
+			<button class="btn btn-default mb_20 btn-add">
+				添加分类
+			</button>
+			<!-- 二级菜单列表 -->
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>一级分类名称</th>
+						<th>二级分类名称</th>
+						<th>二级分类LOGO</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+
+			<!-- 分页模块 -->
+			<div class="text-center">
+				<ul id="paginator"></ul>
+			</div>
 
 		</div>
 	</div>
 	
+
+
+
 	<!-- 右侧主体的模态框 -->
 	<div class="modal fade" tabindex="-1" role="dialog" id="logoutModal">
 	  <div class="modal-dialog modal-sm" role="document">
@@ -95,13 +123,102 @@
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+
+	<!-- 二级菜单的模态框 -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="secondModal">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">添加分类</h4>
+	      </div>
+
+	      <form id="form">
+
+		      <div class="modal-body">
+		      	<!-- 1. 下拉菜单 -->
+		      	<div class="form-group">
+		      		<div class="dropdown">
+							  <button class="btn btn-default dropdown-toggle dropdown-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							    请选择一级分类
+							    <span class="caret"></span>
+
+							  </button>
+						    <!-- 下拉菜单的隐藏域 -->
+	      				<input type="hidden" name="categoryId">
+							  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+							  </ul>
+							</div>
+		      	</div>
+		      	
+						<!-- 2. 请输入二级分类 -->
+						<div class="form-group">
+					    <input type="text" class="form-control" placeholder="请输入二级分类" name="brandName">
+					  </div>
+					  <!-- 3. 上传图片 -->
+					  <div class="form-group fileupload-box">
+					  	<button class="btn btn-default">上传图片</button>
+					  	<input type="file" id="fileupload" name ="pic1" data-url="/category/addSecondCategoryPic">
+					  </div>
+					  <!-- 4. 图片的预览 -->
+					  <div class="form-group img-box">
+					  	<img src="images/none.png" width="100" height="100" alt="">
+					  	<input type="hidden" name="brandLogo">
+					  	<input type="hidden" name="hot" value="1">
+					  </div>
+		      </div>
+
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        <button type="submit" class="btn btn-primary btn-add">添加</button>
+		      </div>
+
+	      </form>
+
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->	
+
+
+	<!-- 一级菜单列表的模板 -->
+	<script type="text/html" id="tpl_second">
+		{{each rows v i}}
+		<tr>
+			<td>{{(page-1)*size + i+1}}</td>
+			<td>{{v.categoryName}}</td>
+			<td>{{v.brandName}}</td>
+			<td><img width="60" height="60" src="{{v.brandLogo}}" alt=""></td>
+		</tr>
+		{{/each}}
+	</script>
+	<!-- 添加分类中一级菜单的模板 -->
+	<script type="text/html" id="tpl_add">
+		{{each rows v i}}
+		<li><a href="#" data-id="{{v.id}}">{{v.categoryName}}</a></li>
+		{{/each}}
+	</script>
+
+
+
 	<!-- bootstrap框架 核心JS -->
 	<script src="lib/jquery/jquery.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+	<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+
 	<!-- 关于进度条的 js -->
 	<script src="lib/nprogress/nprogress.js"></script>
 	<!-- 关于echarts -->
 	<script src="lib/echarts/echarts.common.min.js"></script>
+	<!-- 关于模板引擎 -->
+	<script src="lib/artTemplate/template-web.js"></script>
+	<!-- 关于文件上传 -->
+	<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+	<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
+
+	<!-- 开发者的js -->
 	<script src="js/common.js"></script>
+	<script src="js/second.js"></script>
 </body>
 </html>

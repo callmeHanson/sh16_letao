@@ -128,6 +128,23 @@ a:link, a:visited, a:hover, a:active {
 .mb_20 {
 	margin-bottom: 20px;
 }
+.fileupload-box {
+	position: relative;
+}
+#fileupload {
+	position: absolute;
+	width: 82px;
+	height: 34px;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+// 奇淫技巧，想要hover的元素被盖住了，那我就hover外面的元素
+.fileupload-box:hover button {
+	color: #333;
+	background-color: #e6e6e6;
+	border-color: #adadad;
+}
 /* ====================	用户users区域 ===================== */
 // #paginator {
 // 	float: right;
