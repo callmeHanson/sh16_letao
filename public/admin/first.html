@@ -7,7 +7,8 @@
 
 	<title>乐淘--index页面--29下午</title>
 	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
-
+	<!-- 关于表单校验 -->
+	<link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
 	<!-- 关于进度条 的css引包 -->
 	<link rel="stylesheet" href="lib/nprogress/nprogress.css">
 	<link rel="stylesheet" href="css/common.css">
@@ -71,7 +72,7 @@
 			</ol>
 
 			<!-- first页面 添加分类 -->
-			<button class="btn btn-default mb_20">添加分类</button>
+			<button class="btn btn-default mb_20 btn-add">添加分类</button>
 
 			<!-- first页面 一级分类的表格 -->
 			<table class="table table-bordered table-hover ">
@@ -90,9 +91,12 @@
 			</table>
 
 			<!-- 分页模块 -->
-			<ul id="paginator">
+			<div class="text-center">
+				<ul id="paginator">
 				
-			</ul>
+				</ul>
+			</div>
+			
 		</div>
 	</div>
 	
@@ -119,6 +123,34 @@
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
+	<!-- 添加分类的模态框 -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="first_addModal">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">添加分类</h4>
+	      </div>
+	      <form id="form">
+		      <div class="modal-body">
+
+		        <div class="form-group">
+					    <input type="text" class="form-control" placeholder="请输入一级分类" name="categoryName">
+					  </div>
+
+		      </div>
+		    
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+
+		        <!-- 将添加按钮追加到上面的表单中，用来提交他们 -->
+		        <button type="submit" form="form" class="btn btn-primary btn-add">添加</button>
+		      </div>
+		    </form>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->	
+
 	<!-- first页面下的一级菜单列表 -->
 	<script type="text/html" id="tpl_first">
 		{{each rows v i}}
@@ -133,6 +165,8 @@
 	<!-- bootstrap框架 核心JS -->
 	<script src="lib/jquery/jquery.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<!-- 关于表单校验 -->
+	<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 	<!-- 关于进度条的 js -->
 	<script src="lib/nprogress/nprogress.js"></script>
 	<!-- 关于echarts -->
