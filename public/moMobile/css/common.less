@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+html,
+body {
+  height: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.lt_container {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  padding: 45px 0 55px;
+  > .lt_header {
+    width: 100%;
+    height: 45px;
+    background: #006699;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 45px;
+    > .icon_left,.icon_right{
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      top: 0;
+      color: #fff;
+    }
+    > .icon_left {
+      left: 0;
+    }
+    > .icon_right {
+      right: 0;
+    }
+    > h4 {
+      line-height: 45px;
+      margin: 0;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+  > .lt_main {
+    height: 100%;
+    /*将内部定位元素都限制到main里面*/
+    position: relative;
+    /*将溢出内容都限制在main的高度里面，不显示*/
+    overflow: hidden;
+
+    background: #fff;
+    .lt_nav {
+      padding: 10px;
+    }
+    .lt_nav li {
+      float: left;
+      width: 33.333%;
+    }
+    .lt_nav li img {
+      display: block;
+      width: 100%;
+    }
+    .lt_product {
+      padding: 10px 0;
+      > ul li {
+        width: 50%;
+        padding: 10px;
+        text-align: center;
+        float: left;
+        > .content {
+          border: 1px solid #ccc;
+          padding: 10px;
+          .price {
+            color: red;
+          }
+          .oldPrice {
+            text-decoration: line-through;
+          }
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  > .lt_footer {
+    width: 100%;
+    height: 55px;
+    background: #006699;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    a {
+      color: #fff;
+    }
+    p {
+      color: #fff;
+      font-size: 12px;
+    }
+    > ul li {
+      float: left;
+      width: 25%;
+      height: 55px;
+      text-align: center;
+      padding-top: 10px;
+    }
+    > ul li.now a {
+      color: darkorange;
+    }
+    > ul li.now p {
+      color: darkorange;
+    }
+  }
+}
